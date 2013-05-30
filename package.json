@@ -1,0 +1,22 @@
+{
+    "name": "mod-hosts",
+    "version": "0.1.0",
+    "description": "enable remapping of requests for one host to a different IP, overriding DNS",
+    "maintainers": [
+        {"name": "yuanyan", "web": "https://github.com/yuanyan"}
+    ],
+    "homepage": "http://modulejs.github.com/modjs",
+    "main": "hosts.js",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/modjs/hosts.git"
+    },
+
+    "dependencies": {
+    },
+    "devDependencies": {
+    },
+    "engines": {"node": ">= 0.6.x"},
+    "bugs": {"url": "http://github.com/modulejs/modjs/issues"},
+    "license": "MIT"
+}
