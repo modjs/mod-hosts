@@ -20,7 +20,12 @@ module.exports = {
     },
     tasks: {
         hosts: {
-
+            group1:{
+                hosts: "127.0.0.1 foo.com"
+            },
+            group2:{
+                hosts: ["127.0.0.1 foo.com", "127.0.0.1 example.com"]
+            }
         }
     }
 };
