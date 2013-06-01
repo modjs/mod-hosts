@@ -2,16 +2,15 @@ var hostsManager = require('./lib/hostsManager');
 
 exports.summary = 'Remapping of requests for one host to a different IP';
 
-exports.usage = '<action> [options]';
+exports.usage = '<hosts> [options]';
 
 exports.options = {
+    hosts: {
+        describe : 'the hosts'
+    },
     action: {
         describe : 'the action',
         default: 'set'
-    },
-
-    hosts: {
-        describe : 'the hosts'
     }
 };
 
@@ -27,7 +26,7 @@ exports.run = function (options, callback) {
     }
 
     if(!_.isArray(hosts)){
-        exports.error(hosts, 'must be string or array');
+        exports.error('hosts option must be string or array');
     }
 
     hosts.forEach(function(host){

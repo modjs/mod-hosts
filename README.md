@@ -8,7 +8,7 @@ enable remapping of requests for one host to a different IP, overriding DNS
 
 ### By CLI
 ```sh
-$ mod hosts 
+$ mod hosts "127.0.0.1 localhost"
 ```
 
 ### By AutoTask
@@ -24,7 +24,7 @@ module.exports = {
                 hosts: "127.0.0.1 localhost"
             },
             group2:{
-                hosts: ["127.0.0.1 make.love", "127.0.0.1 example.com"]
+                hosts: ["127.0.0.1 www.qq.com", "127.0.0.1 example.com"]
             }
         }
     },
