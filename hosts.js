@@ -33,6 +33,7 @@ exports.run = function (options, callback) {
     hosts.forEach(function(host){
         var m= host.match(/^\s*([^\s]+)\s+([^#\s]+)/);
         hostsManager.set(m[1], m[2], group);
+        exports.log(m[1], m[2]);
     });
 
     hostsManager.save();

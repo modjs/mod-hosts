@@ -1,6 +1,6 @@
 {
     "name": "mod-hosts",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "enable remapping of requests for one host to a different IP, overriding DNS",
     "maintainers": [
         {"name": "yuanyan", "web": "https://github.com/yuanyan"}
