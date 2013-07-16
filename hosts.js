@@ -5,7 +5,7 @@ var fs = require('fs'),
 var lineBreak = {
   'win32': '\r\n',
   'linux': '\n',
-  'darwin': '\n'
+  'darwin': '\r'
 }[platform];
 
 
