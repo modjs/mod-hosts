@@ -1,4 +1,13 @@
-var hostsManager = require('./lib/hostsManager');
+var fs = require('fs'),
+    hostsManager = require('./lib/hostsManager'),
+    platform = process.platform;
+
+var lineBreak = {
+  'win32': '\r\n',
+  'linux': '\n',
+  'darwin': '\r'
+}[platform];
+
 
 exports.summary = 'Remapping of requests for one host to a different IP';
 
@@ -21,8 +30,14 @@ exports.run = function (options, callback) {
     var group = options.group;
 
     var _ = exports._;
+
     if(_.isString(hosts)){
-        hosts = [hosts]
+        if (fs.existsSync(hosts)){ // to support file path 
+          hosts = fs.readFileSync(hosts).toString().split(lineBreak).filter(function(hosts){return hosts !== ''}); // to filter null line
+        }
+        else {
+          hosts = [hosts];
+        }
     }
 
     if(!_.isArray(hosts)){
