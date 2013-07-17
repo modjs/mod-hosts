@@ -3,17 +3,15 @@ hosts
 
 enable remapping of requests for one host to a different IP, overriding DNS
 
-## Examples
-
+## Usage
 
 ### By CLI
 ```sh
 $ mod hosts "127.0.0.1 localhost"
 ```
 
-### By AutoTask
+### By Modfile
 ```js
-// Modfile
 module.exports = {
     plugins: {
         hosts: "mod-hosts"
@@ -25,10 +23,12 @@ module.exports = {
             },
             group2:{
                 hosts: ["127.0.0.1 www.qq.com", "127.0.0.1 example.com"]
+            },
+			group3:{
+                hosts: "./path/to/my/hosts/file"
             }
         }
     },
-
     targets: {
         dist: "hosts"
     }
